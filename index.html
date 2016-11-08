@@ -4,6 +4,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="css/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
     <title></title>
@@ -11,28 +12,33 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <div class="bg">
-          Bleep Bloop
-        </div>
         <div class="content">
-          <img src="img/jux1.png" id="test" class="animated rotateInDownLeft">
+          <h2 id="test" class="animated tada">Juxstaposition</h2>
           <h1 id="test2" class="animated flip">Round 1</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-md-9 col-xm-9">
-          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
-          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
-          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
-          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
-          <div class="inline2">
-            <button type="submit" class="btn-success">Shuffle</button> <!--*SUBMIT BUTTON*-->
+          <br>
+          <div id="letterOne" class="well">
+          </div>
+          <div id="letterOne" class="well">
+          </div>
+          <div id="letterOne" class="well">
+          </div>
+          <div id="letterOne" class="well">
+          </div>
+          <!--*SUBMIT BUTTON*-->
+          <div class="shuffleButton">
+            <button type="submit" class="btn-success">Shuffle</button>
           </div>
           <br><br>
           <!-- Form for the user to write their potential words -->
-          <div class="userForm">
+          <div class="col-xs-3" id="userForm">
             <input id="formInput" class="form-control" type="text">
           </div>
+
+          <br><br><br>
           <!-- timer countdown -->
           <div class="timer">
  		        <div class="cell">

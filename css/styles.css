@@ -1,17 +1,47 @@
+.jumbotron {
+  height: 200px;
+  width: 100%;
+}
+#letterOne {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  display: inline;
+}
+
 #sibebarResults {
   background-color: rgba(0, 0, 0, 0.4);
+  height: 600px;
+  width: 300px;
+  float: right;
 }
 body {
-  background-image: url(http://www.mb3d.co.uk/mb3d/Wood_Seamless_and_Tileable_High_Res_Textures_files/Wood_11_UV_H_CM_1.jpg);
+  background-color: black;
 }
 #test{
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 70px;
+  font-weight: bolder;
   -webkit-animation-duration: 1s;
+
   opacity: 1;
 }
 #test2{
+  font-family: 'Bungee HairLine', cursive;
+  font-size: 40px;
+  margin-bottom: 4000px;
   -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2s;
   opacity: 1;
+  color: red;
 }
+
+#userForm {
+  width: 300px;
+  height: 100px;
+  margin-left: 185px;
+}
+
 h1 {
   text-align: center;
   color: white;
@@ -20,12 +50,7 @@ h1 {
   font-family: inherit;
   font-weight: bold;
 }
-#jumbo {
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 1;
-  padding-bottom: 40px;
-  margin-top: 40px;
-}
+
 
 .floating-box {
     float: left;
