@@ -7,125 +7,90 @@
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
     <title></title>
-
   </head>
-
   <body>
-     <div class="container">
-       <div class="jumbotron">
-         <img src="img/jux2.png" id="test" class="animated rotateInDownLeft">
-        <h1 id="test2" class="animated flip">Round 1</h1>
+    <div class="container">
+      <div class="jumbotron">
+        <div class="bg">
+          Bleep Bloop
+        </div>
+        <div class="content">
+          <img src="img/jux1.png" id="test" class="animated rotateInDownLeft">
+          <h1 id="test2" class="animated flip">Round 1</h1>
+        </div>
       </div>
-
-  <div class="row">
-    <div class="col-md-9 col-xm-9">
-     <label class="inline"><input class="floating-box" ></label>
-     <label class="inline"><input class="floating-box" ></label>
-     <label class="inline"><input class="floating-box" ></label>
-     <label class="inline"><input class="floating-box" ></label>
-
-     <div class="inline2">
-      <button type="submit" class="btn-success">Shuffle</button>
-     </div>
-      <br>
-     <div class="enterText">
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-      <label class="inline3"><input class="floating-box3" ></label>
-     </div>
-      <br>
-
-   </div>
-
-   <div class="col-md-3 col-xm-3">
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <br>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <br>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <br>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <br>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <br>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <label class="inline1"></label>
-     <br>
-   </div>
-  </div>
-
-
-
-
-
-	<!-- time to add the controls -->
-	<input id="start" name="controls" type="radio" />
-	<input id="stop" name="controls" type="radio" />
-	<input id="reset" name="controls" type="radio" />
-	<div class="timer">
-		<div class="cell">
-			<div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell">
-			<div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell divider"><div class="numbers">:</div></div>
-		<div class="cell">
-			<div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
-		</div>
-		<div class="cell">
-			<div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell divider"><div class="numbers">:</div></div>
-		<div class="cell">
-			<div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
-		</div>
-		<div class="cell">
-			<div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell divider"><div class="numbers">:</div></div>
-		<div class="cell">
-			<div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell">
-			<div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-		<div class="cell">
-			<div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
-		</div>
-	</div>
-	<!-- Lables for the controls -->
-	<div id="timer_controls">
-		<label for="start">Start</label>
-		<label for="stop">Stop</label>
-		<label for="reset">Reset</label>
-	</div>
-</div>
-
+      <div class="row">
+        <div class="col-md-9 col-xm-9">
+          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
+          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
+          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
+          <label class="inline"><input class="floating-box" ></label> <!--The 4 floating letter boxes that need to be removed -->
+          <div class="inline2">
+            <button type="submit" class="btn-success">Shuffle</button> <!--*SUBMIT BUTTON*-->
+          </div>
+          <br><br>
+          <!-- Form for the user to write their potential words -->
+          <div class="userForm">
+            <input id="formInput" class="form-control" type="text">
+          </div>
+          <!-- timer countdown -->
+          <div class="timer">
+ 		        <div class="cell">
+ 			        <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 		        <div class="cell">
+ 			        <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 		        <div class="cell divider">
+              <div class="numbers">:
+              </div>
+            </div>
+ 		        <div class="cell">
+ 			        <div class="numbers tenminute movesix">0 1 2 3 4 5 6
+              </div>
+ 		        </div>
+ 		        <div class="cell">
+ 			        <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 		        <div class="cell divider">
+              <div class="numbers">:
+              </div>
+            </div>
+ 		        <div class="cell">
+ 			        <div class="numbers tensecond movesix">0 1 2 3 4 5 6
+              </div>
+ 		        </div>
+ 		        <div class="cell">
+ 			        <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 		        <div class="cell divider">
+              <div class="numbers">:
+              </div>
+            </div>
+ 		        <div class="cell">
+ 			        <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 		        <div class="cell">
+ 			        <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 		        <div class="cell">
+ 			        <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9
+              </div>
+ 		        </div>
+ 	        </div>
+        </div>
+        <!--Sidebar-->
+        <div class="col-md-3 col-xm-3">
+          <div id="sibebarResults" class="well well-lg">
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

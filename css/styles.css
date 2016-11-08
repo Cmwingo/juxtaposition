@@ -1,11 +1,16 @@
+#sibebarResults {
+  background-color: rgba(0, 0, 0, 0.4);
+}
 body {
   background-image: url(http://www.mb3d.co.uk/mb3d/Wood_Seamless_and_Tileable_High_Res_Textures_files/Wood_11_UV_H_CM_1.jpg);
 }
 #test{
   -webkit-animation-duration: 1s;
+  opacity: 1;
 }
 #test2{
   -webkit-animation-duration: 1s;
+  opacity: 1;
 }
 h1 {
   text-align: center;
@@ -15,12 +20,13 @@ h1 {
   font-family: inherit;
   font-weight: bold;
 }
-.jumbotron {
-  background-color: none;
+#jumbo {
+  background-color: rgba(0, 0, 0, 0.4);
   opacity: 1;
   padding-bottom: 40px;
   margin-top: 40px;
 }
+
 .floating-box {
     float: left;
     width: 90px;
