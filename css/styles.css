@@ -7,7 +7,7 @@ body {
 #test2{
   -webkit-animation-duration: 1s;
 }
-.jumbotron h1 {
+h1 {
   text-align: center;
   color: white;
   font-style: normal;
@@ -16,7 +16,10 @@ body {
   font-weight: bold;
 }
 .jumbotron {
-  background-color: navy;
+  background-color: none;
+  opacity: 1;
+  padding-bottom: 40px;
+  margin-top: 40px;
 }
 .floating-box {
     float: left;
