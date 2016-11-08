@@ -82,24 +82,25 @@ function powerSet(array) {
   var set = [];
   var set2 = [];
   var set3 = [];
-  set.push(array);
+  set.push(array.join(''));
   for(i = 0; i < array.length; i++){
     var newSet3 = array.slice(1,array.length);
     console.log("New Set of 3: " + newSet3);
-    set3.push(newSet3);
+    // set3.push(newSet3.join(''));
     for(n = 0; n < newSet3.length; n++){
-      var newSet2 = newSet3.slice(1,newSet3.length);
+      var newSet2 = newSet3.slice(0,newSet3.length);
       console.log("New Set of 2: " + newSet2);
-      set2.push(newSet2);
-      set2.push(newSet2.shift());
+      set.push(newSet2.join(''));
+      // set2.push(newSet2.shift());
       set3.push(newSet3.shift());
     };
     array.push(array.shift());
   };
 
-  set.push(set3);
+  // set.push(set3);
   set.push(set2);
-
+  console.log(set2);
+  console.log(set3);
   console.log(set);
 }
 var testData = ["1","2","3","4"];
