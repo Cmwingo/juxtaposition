@@ -1,6 +1,7 @@
 
 
 
+
 function randomize(length) {
   var randomLetters = "";
   var lettersArray = [];

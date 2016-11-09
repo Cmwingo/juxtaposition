@@ -3,6 +3,8 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
     <script src="js/jquery-3.1.1.js"></script>
 
     <script src="js/wordList.min.js"></script>
@@ -10,15 +12,100 @@
     <script src="js/scripts.js"></script>
     <title></title>
   </head>
-
   <body>
     <div class="container">
-      <div id="play=button">
-        <button type="button" class="btn btn-lg center-block"  id="play">PLAY!?</button>
+      <div class="jumbotron">
+        <div class="content">
+          <h2 id="test" class="animated tada">Juxstaposition</h2>
+          <h1 id="test2" class="animated flip">Round 1</h1>
+        </div>
       </div>
-      <ul id="words">
-        <ul>
+      <div class="panel">
+        <div class="row">
+        <!--Wells for Game Letters-->
+          <div class="col-md-8">
+            <br>
+            <div id="letterOne" class="well">
+            </div>
+            <div id="letterOne" class="well">
+            </div>
+            <div id="letterOne" class="well">
+            </div>
+            <div id="letterOne" class="well">
+            </div>
+            <!--*SUBMIT BUTTON*-->
+            <div class="shuffleButton">
+              <button type="submit" class="btn-success">Shuffle</button>
+            </div>
+            <br><br>
+            <!-- Form for the user to write their potential words -->
+            <div id="userForm">
+              <input id="formInput" class="form-control" type="text">
+            </div>
 
+            <br><br><br>
+            <!-- timer countdown -->
+            <div class="row">
+              <div class="timer">
+     		        <div class="cell">
+     			        <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     		        <div class="cell">
+     			        <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     		        <div class="cell divider">
+                  <div class="numbers">:
+                  </div>
+                </div>
+     		        <div class="cell">
+     			        <div class="numbers tenminute movesix">0 1 2 3 4 5 6
+                  </div>
+     		        </div>
+     		        <div class="cell">
+     			        <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     		        <div class="cell divider">
+                  <div class="numbers">:
+                  </div>
+                </div>
+     		        <div class="cell">
+     			        <div class="numbers tensecond movesix">0 1 2 3 4 5 6
+                  </div>
+     		        </div>
+     		        <div class="cell">
+     			        <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     		        <div class="cell divider">
+                  <div class="numbers">:
+                  </div>
+                </div>
+     		        <div class="cell">
+     			        <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     		        <div class="cell">
+     			        <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     		        <div class="cell">
+     			        <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9
+                  </div>
+     		        </div>
+     	        </div>
+            </div>
+          </div>
+          <!--Sidebar-->
+          <div class="col-md-4">
+            <div id="sibebarResults" class="well well-lg">
+              <ul id="wordz">Words appear here!</ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
