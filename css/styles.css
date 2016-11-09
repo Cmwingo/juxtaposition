@@ -2,22 +2,28 @@
   height: 200px;
   width: 100%;
 }
+
+.panel {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 #letterOne {
   height: 30px;
   width: 30px;
-  text-align: center;
   display: inline;
 }
 
 #sibebarResults {
   background-color: rgba(0, 0, 0, 0.4);
   height: 600px;
-  width: 300px;
+  width: 250px;
   float: right;
 }
+
 body {
   background-color: black;
 }
+
 #test{
   font-family: 'Bungee Hairline', cursive;
   font-size: 70px;
@@ -26,6 +32,7 @@ body {
 
   opacity: 1;
 }
+
 #test2{
   font-family: 'Bungee HairLine', cursive;
   font-size: 40px;
@@ -37,9 +44,14 @@ body {
 }
 
 #userForm {
-  width: 300px;
-  height: 100px;
-  margin-left: 185px;
+  display: block;
+  text-align: center;
+}
+.form-control {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 h1 {
@@ -50,23 +62,6 @@ h1 {
   font-family: inherit;
   font-weight: bold;
 }
-
-
-.floating-box {
-    float: left;
-    width: 90px;
-    height: 75px;
-    margin: 10px;
-    border: 3px solid black;
-}
-.floating-box1 {
-    float: left;
-    width: 30px;
-    height: 20px;
-    border: 2px solid black;
-    margin-top: 20px;
-}
-
 
 .col-md-9 {
     text-align: center;
