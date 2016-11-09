@@ -119,22 +119,129 @@ powerSet(testData);
 //
 // function possibleWords(letterArray, prevPrefix) {
 //   for(i = 0; i < letterArray.length; i++) {
-//     prevPrefix.push(prevPrefix);
-//     var prefix = letterArray.slice(0,i+1);
-//     var suffix = letterArray.slice(i+1, letterArray.length);
+//     var prefix = letterArray.slice(0,1);
+//     var suffix = letterArray.slice(1, letterArray.length);
 //     console.log("Prefix: " + prefix);
 //     console.log("Suffix: " + suffix);
-//     if(suffix.length === 1) {
-//       console.log(prevPrefix[i] + prefix + suffix);
-//       console.log(prevPrefix[i] + suffix + prefix);
+//     // debugger;
+//     if(suffix.length === 2) {
+//       console.log(prevPrefix + prefix + suffix);
+//       suffix.push(suffix.shift());
+//       console.log(prevPrefix + prefix + suffix);
+//       suffix.push(suffix.shift());
+//       // possibleWords(letterArray, prevPrefix);
+//       // return;
+//     } else if(suffix.length === 1) {
 //       return;
 //     } else {
-//       console.log(prevPrefix[i] + prefix + suffix);
-//       possibleWords(suffix, prefix);
+//       console.log(prevPrefix + prefix + suffix);
+//       prevPrefix.push(prefix);
 //       suffix.push(suffix.shift());
 //     }
+//     letterArray.push(letterArray.shift());
+//     console.log(prefix + suffix);
+//     possibleWords(suffix, prefix);
+//     return;
 //   }
-//   letterArray.push(letterArray.shift());
 // }
-// var testData = ["1","2","3","4"];
-// possibleWords(testData, []);
+// function possibleWords(letterArray, prevPrefix) {
+//   for(i = 0; i < letterArray.length; i++) {
+//     var prefix = letterArray.slice(0,1);
+//     console.log("Prefix: " + prefix);
+//     var suffix = letterArray.slice(1, letterArray.length);
+//     console.log("Suffix: " + suffix);
+//     if(suffix.length === 1){
+//       return;
+//     } else {
+//       possibleWords(suffix, prefix);
+//     }
+//     console.log(prevPrefix + prefix + suffix);
+//     letterArray.push(letterArray.shift());
+//     prefix = letterArray.slice(0,1);
+//     console.log("New Prefix: " + prefix);
+//     suffix = letterArray.slice(1, letterArray.length);
+//     console.log("New Suffix: " + suffix);
+//     console.log(prevPrefix + prefix + suffix);
+//   }
+// }
+
+// function possibleWords(letterArray, prevPrefix) {
+//   for(i = 0; i < letterArray.length; i++) {
+//     var prefix = letterArray.slice(0,1);
+//     console.log("Prefix: " + prefix);
+//     var suffix = letterArray.slice(1, letterArray.length);
+//     console.log("Suffix: " + suffix);
+//     for(n = 0; n < suffix.length; n++) {
+//       console.log(prevPrefix + prefix + suffix);
+//       if(suffix.length === 1) {
+//         console.log(prevPrefix + suffix + prefix);
+//         console.log(prevPrefix + prefix + suffix);
+//         return;
+//       } else {
+//         suffix.push(suffix.shift());
+//         possibleWords(suffix, prefix);
+//       }
+//     }
+//   return;
+//   }
+// }
+
+// function permute(letterArray, prevPrefix) {
+//   var prefix = letterArray.slice(0,1);
+//   console.log("Prefix: " + prefix);
+//   var suffix = letterArray.slice(1, letterArray.length);
+//   console.log("Suffix: " + suffix);
+//   if(suffix.length === 1){
+//     console.log(prevPrefix + prefix + suffix);
+//     var temp = letterArray[0];
+//     letterArray[0] = letterArray[1];
+//     letterArray[1] = temp;
+//     console.log(prevPrefix + suffix + prefix);
+//     return;
+//   }
+//   permute(suffix, prefix);
+//   // prefix = prevPrefix + prefix;
+//   letterArray.push(letterArray.shift());
+//   var prefix = letterArray.slice(0,1);
+//   console.log("New Prefix: " + prefix);
+//   var suffix = letterArray.slice(1, letterArray.length);
+//   console.log("New Suffix: " + suffix);
+//   permute(suffix, prefix);
+//   if(prefix.length < suffix.length) {
+//     letterArray.push(letterArray.shift());
+//     permute(letterArray, []);
+//   }
+//   else {
+//     return;
+//   }
+// }
+
+function permute(letterArray, prevPrefix) {
+  var prefix = letterArray.slice(0,1);
+  var suffix = letterArray.slice(1, letterArray.length);
+  var i = 0;
+  var permArray = [];
+  // if(suffix.length === 1) {
+  //   return;
+  // }
+  console.log("Prev Prefix: "+ prevPrefix + "Prefix: " + prefix);
+  console.log("Suffix: " + suffix);
+  for(i = i; i < letterArray.length; i++) {
+    letterArray.push(letterArray.shift());
+    if(letterArray.length === 2)
+    {
+      debugger;
+      break;
+    }
+    if(letterArray.length === 1){
+      break;
+    }
+    permArray.push(prevPrefix + prefix + suffix);
+    permute(suffix, prefix);
+  }
+  letterArray.push(letterArray.shift());
+  return permArray;
+}
+var testData = ["1","2","3","4"];
+permArray = permute(testData, []);
+console.log(permArray);
