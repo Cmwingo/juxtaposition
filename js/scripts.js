@@ -75,6 +75,25 @@ function possibleWords(combos) {
 }
 
 
+function isWord(userInput, wordList) {
+  if(wordList.includes(userInput)) {
+    alert("That's a word");
+  } else {
+  alert("That's not a word");
+  }
+}
+
+function deDup(wordList) {
+  wordList.forEach(function(word, i){
+    var word = wordList[i];
+    wordList.splice(i,1);
+    if(!wordList.includes(word))
+    {
+      wordList.push(word);
+    }
+  });
+  return wordList;
+}
 
 $(document).ready(function() {
   var random = randomize(5);
@@ -91,26 +110,22 @@ $(document).ready(function() {
   this.reset();
   event.preventDefault();
   console.log(userWord)
+  });
 
+  // $(document).keypress(function(event) {
+  //   var keycode = event.keyCode || event.which;
+  //   if(keycode == '13') {
+  //     alert('You pressed a "enter" key in somewhere');
+  //     // $("form#userText").submit();
+  //   }
+  // });
+
+  $("form#userText").submit(function(event){
+    alert("Submission");
+    event.preventDefault();
+    var userInput = $("#formInput").val();
+    alert(userInput);
+    isWord(userInput, found);
+    $("#formInput").val('');
+  });
 });
-
-
-});
-
-
-
-
-
-
-
-
-// function checkWords(words) {
-//   var foundWords = [];
-//   words.forEach(function(word) {
-//     if (Word_List.isInList(word)) {
-//       foundWords.push(word);
-//     }
-//   });
-//   return foundWords;
-// };
-// --------------------------------------------------
