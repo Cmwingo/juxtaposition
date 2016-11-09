@@ -105,21 +105,6 @@ $(document).ready(function() {
     });
   }
   $("#random").text(random);
-  $("form").submit(function(event) {
-  var userWord = $("#user").val();
-  this.reset();
-  event.preventDefault();
-  console.log(userWord)
-  });
-
-  // $(document).keypress(function(event) {
-  //   var keycode = event.keyCode || event.which;
-  //   if(keycode == '13') {
-  //     alert('You pressed a "enter" key in somewhere');
-  //     // $("form#userText").submit();
-  //   }
-  // });
-
   $("form#userText").submit(function(event){
     alert("Submission");
     event.preventDefault();
