@@ -72,13 +72,20 @@ combos.forEach(function (combo) {
   });
 });
 
+function isWord(userInput, wordList) {
+  if(wordList.includes(userInput)) {
+    alert("That's a word");
+  } else {
+  alert("That's not a word");
+  }
+}
 
 $(document).ready(function() {
   $(document).keypress(function(event) {
     var keycode = event.keyCode || event.which;
     if(keycode == '13') {
       alert('You pressed a "enter" key in somewhere');
-      $("form#userText").submit();
+      // $("form#userText").submit();
     }
   });
 
@@ -87,7 +94,8 @@ $(document).ready(function() {
     event.preventDefault();
     var userInput = $("#formInput").val();
     alert(userInput);
-    $("#userForm").text() = '';
+    isWord(userInput, found);
+    $("#formInput").val('');
   });
 
   $("#play").on('click', function() {
