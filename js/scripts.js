@@ -111,6 +111,7 @@ $(document).ready(function() {
     found = getRandomLetters();
   }
   if(found.length >= 5) {
+    found = deDup(found);
     found.forEach(function (word) {
       $("#words").append("<li>" + word + "</li>");
     });
