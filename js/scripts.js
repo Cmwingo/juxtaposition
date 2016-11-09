@@ -74,6 +74,22 @@ combos.forEach(function (combo) {
 
 
 $(document).ready(function() {
+  $(document).keypress(function(event) {
+    var keycode = event.keyCode || event.which;
+    if(keycode == '13') {
+      alert('You pressed a "enter" key in somewhere');
+      $("form#userText").submit();
+    }
+  });
+
+  $("form#userText").submit(function(event){
+    alert("Submission");
+    event.preventDefault();
+    var userInput = $("#formInput").val();
+    alert(userInput);
+    $("#userForm").text() = '';
+  });
+
   $("#play").on('click', function() {
     $("#words").empty();
     event.preventDefault();
