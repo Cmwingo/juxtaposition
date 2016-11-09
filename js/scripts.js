@@ -163,7 +163,7 @@ $(document).ready(function() {
   $("form#userText").submit(function(event){
     alert("Submission");
     event.preventDefault();
-    var userInput = toLowercae($("#formInput").val());
+    var userInput = $("#formInput").val().toLowerCase();
     alert(userInput);
     isWord(userInput, found);
     $("#formInput").val('');
