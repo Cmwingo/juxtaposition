@@ -114,6 +114,7 @@ function possibleWords(combos) {
 function isWord(userInput, wordList) {
   if(wordList.includes(userInput)) {
     alert("That's a word");
+    $('#' + userInput).removeClass("crypto");
   } else {
   alert("That's not a word");
   }
@@ -148,8 +149,8 @@ $(document).ready(function() {
   }
   if(found.length >= 5) {
     found = deDup(found);
-    found.forEach(function (word) {
-      $("#words").append("<li>" + word + "</li>");
+    found.forEach(function (word,i) {
+      $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
     });
   }
   // $(document).keypress(function(event) {
