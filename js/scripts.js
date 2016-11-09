@@ -8,8 +8,9 @@ function randomize(length) {
 
   for( var i=0; i < length; i++ )
     randomLetters += letters.charAt(Math.floor(Math.random() * letters.length));
-
+    console.log(randomLetters);
     return randomLetters;
+
 };
 
 function combinations(str) {
@@ -22,6 +23,7 @@ function combinations(str) {
            fn(active + rest[0], rest.slice(1), a);
            fn(active, rest.slice(1), a);
        }
+       console.log(a);
        return a;
    }
    return fn("", str, []);
@@ -45,12 +47,16 @@ function permute(input) {
         permArr.forEach(function (p) {
           result.push(p.join(''));
         });
+
         return result;
+
     })();
+
+
 }
 
 
-var combos = combinations(randomize(5));
+var combos = combinations(randomize(6));
 
 var found = [];
 
@@ -65,7 +71,16 @@ combos.forEach(function (combo) {
   });
 });
 
-document.write(found);
+
+$(document).ready(function() {
+  $("#play").on('click', function() {
+    $("#words").empty();
+    event.preventDefault();
+    found.forEach(function (word) {
+      $("#words").append("<li>" + word + "</li>");
+    });
+  });
+});
 
 
 
