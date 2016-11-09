@@ -40,14 +40,15 @@ window.onload = function () {
 
 function randomize(length) {
   var randomLetters = "";
-  var lettersArray = [];
   var letters = "abcdefghijklmnopqrstuvwxyz";
+  var vowels = "aeiou"
 
-  for( var i=0; i < length; i++ )
+  for( var i=0; i < length -1; i++ )
     randomLetters += letters.charAt(Math.floor(Math.random() * letters.length));
+
+    randomLetters += vowels.charAt(Math.floor(Math.random() * vowels.length));
     console.log(randomLetters);
     return randomLetters;
-
 };
 
 function combinations(str) {
@@ -60,7 +61,6 @@ function combinations(str) {
            fn(active + rest[0], rest.slice(1), a);
            fn(active, rest.slice(1), a);
        }
-       console.log(a);
        return a;
    }
    return fn("", str, []);
@@ -93,46 +93,60 @@ function permute(input) {
 }
 
 
-var combos = combinations(randomize(6));
 
-var found = [];
+function possibleWords(combos) {
+  var found = [];
 
-combos.forEach(function (combo) {
+  combos.forEach(function (combo) {
+    var permutations = permute(combo.split(''));
 
-  var permutations = permute(combo.split(''));
+    permutations.forEach(function (perm) {
+      if (Word_List.isInList(perm) && perm.length >= 3){
+        found.push(perm);
+      }
+    });
+  });
+    console.log(found);
+    return found;
+}
 
-  permutations.forEach(function (perm) {
-    if (Word_List.isInList(perm) && perm.length >= 3){
-      found.push(perm);
+
+function isWord(userInput, wordList) {
+  if(wordList.includes(userInput)) {
+    alert("That's a word");
+  } else {
+  alert("That's not a word");
+  }
+}
+
+function deDup(wordList) {
+  wordList.forEach(function(word, i){
+    var word = wordList[i];
+    wordList.splice(i,1);
+    if(!wordList.includes(word))
+    {
+      wordList.push(word);
     }
   });
-});
-
+  return wordList;
+}
 
 $(document).ready(function() {
-  $("#play").on('click', function() {
-    $("#words").empty();
-    event.preventDefault();
+  var random = randomize(5);
+  var combos = combinations(random);
+  var found = possibleWords(combos);
+  if (found.length >= 5) {
     found.forEach(function (word) {
       $("#words").append("<li>" + word + "</li>");
     });
+  }
+  $("#random").text(random);
+  $("form#userText").submit(function(event){
+    alert("Submission");
+    event.preventDefault();
+    var userInput = $("#formInput").val();
+    alert(userInput);
+    isWord(userInput, found);
+    $("#formInput").val('');
   });
 });
-
-
-
-
-
-
-
-
-// function checkWords(words) {
-//   var foundWords = [];
-//   words.forEach(function(word) {
-//     if (Word_List.isInList(word)) {
-//       foundWords.push(word);
-//     }
-//   });
-//   return foundWords;
-// };
-// --------------------------------------------------

@@ -21,31 +21,7 @@
     border-color: #396;
 }
 
-#letterOne {
-  height: 30px;
-  width: 30px;
-  display: inline;
-  margin-right: 10px;
-}
-#letterTwo {
-  height: 30px;
-  width: 30px;
-  display: inline;
-  margin-right: 10px;
-}
-#letterThree {
-  height: 30px;
-  width: 30px;
-  display: inline;
-  margin-right: 10px;
-}
-#letterFour {
-  height: 30px;
-  width: 30px;
-  display: inline;
-  margin-right: 10px;
-}
-#letterFive {
+.letter {
   height: 30px;
   width: 30px;
   display: inline;

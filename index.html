@@ -6,7 +6,6 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
     <script src="js/jquery-3.1.1.js"></script>
-
     <script src="js/wordList.min.js"></script>
     <script src="js/wordBank.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -26,15 +25,15 @@
           <div class="col-md-8">
             <div class="letterGroup">
               <br>
-              <div id="letterOne" class="well">
+              <div id="letter1" class="well letter">
               </div>
-              <div id="letterTwo" class="well">
+              <div id="letter2" class="well letter">
               </div>
-              <div id="letterThree" class="well">
+              <div id="letter3" class="well letter">
               </div>
-              <div id="letterFour" class="well">
+              <div id="letter4" class="well letter">
               </div>
-              <div id="letterFive" class="well">
+              <div id="letter5" class="well letter">
               </div>
             </div>
             <!--*SUBMIT BUTTON*-->
@@ -43,10 +42,12 @@
             </div>
             <br><br>
             <!-- Form for the user to write their potential words -->
-            <div id="userForm">
-              <input id="formInput" class="form-control" type="text">
-            </div>
-            <br>
+            <form id="userText">
+              <div id="userForm">
+                <input id="formInput" class="form-control" type="text">
+              </div>
+            </form>
+            <br><br><br>
             <!-- timer countdown -->
             <div class="row">
               <div id="time">
@@ -65,7 +66,7 @@
           <!--Sidebar-->
           <div class="col-md-4">
             <div id="sibebarResults" class="well well-lg">
-              <ul id="wordz">Words appear here!</ul>
+              <ul id="words">Words appear here!</ul>
             </div>
           </div>
         </div>
