@@ -80,6 +80,18 @@ function isWord(userInput, wordList) {
   }
 }
 
+function deDup(wordList) {
+  wordList.forEach(function(word, i){
+    var word = wordList[i];
+    wordList.splice(i,1);
+    if(!wordList.includes(word))
+    {
+      wordList.push(word);
+    }
+  });
+  return wordList;
+}
+
 $(document).ready(function() {
   $(document).keypress(function(event) {
     var keycode = event.keyCode || event.which;
