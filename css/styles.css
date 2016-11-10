@@ -144,12 +144,12 @@ h1 {
 
 }
 
-.crypto {
+#words .crypto {
 font-family: Webdings, sans-serif;
 color: black;
 }
 
-li{
+ #words li{
   color: white;
 }
 
