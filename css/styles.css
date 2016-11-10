@@ -157,6 +157,7 @@ ul {
   float: right;
   margin-left: auto;
   margin-right: auto;
+  overflow: scroll;
 }
 
 #endGame {
