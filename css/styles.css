@@ -64,15 +64,6 @@ margin:0 auto;
 padding: 10% 0;
 }
 
-#sibebarResults {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 800px;
-  width: 400px;
-  float: right;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 body {
   background-color: #00ECB9;
 }
@@ -155,4 +146,13 @@ color: black;
 
 ul {
   list-style: none;
+}
+
+#sidebarResults {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 800px;
+  width: 400px;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
 }
