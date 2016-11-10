@@ -1,3 +1,7 @@
+function endGame() {
+  $("#mainPage").hide();
+  $("#endGame").fadeIn(300);
+}
 function startTimer(duration, display) {
     var start = Date.now(),
         diff,
@@ -21,6 +25,7 @@ function startTimer(duration, display) {
             // <----- clock resets to 1:00 when it hits 0
             // add one second so that the count down starts at the full duration
             // example 05:00 not 04:59
+            endGame();
             start = Date.now() + 1000;
         }
     };

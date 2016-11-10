@@ -55,6 +55,7 @@ ol {
   width: 30px;
   display: inline;
   margin-right: 10px;
+  font-size: 300%
 }
 
 .letterGroup {
@@ -99,7 +100,7 @@ h3{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 150px;
+  width: 85%;
 }
 .form-control {
   display: inline-block;
@@ -146,6 +147,7 @@ color: black;
 
 ul {
   list-style: none;
+  font-size: 200%;
 }
 
 #sidebarResults {
