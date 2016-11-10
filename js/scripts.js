@@ -207,6 +207,9 @@ $(document).ready(function() {
         usedWords.push(userInput);
       }
       console.log(score);
+      if(usedWords.length == found.length) {
+        endGame();
+      }
     }
     $("#formInput").val('');
   });
