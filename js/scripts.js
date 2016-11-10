@@ -174,7 +174,7 @@ $(document).ready(function() {
   });
   var random = randomize(5);
   var found = getRandomLetters(random);
-
+  var usedWords = [];
 
 
    while(found.length <= 5) {
@@ -202,7 +202,10 @@ $(document).ready(function() {
     if(isWord(userInput, found))
     {
       $('#' + userInput).removeClass("crypto");
-      score += userInput.length * 5;
+      if(!usedWords.includes(userInput)) {
+        score += userInput.length * 5;
+        usedWords.push(userInput);
+      }
       console.log(score);
     }
     $("#formInput").val('');
