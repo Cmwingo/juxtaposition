@@ -114,6 +114,7 @@ function possibleWords(combos) {
 function isWord(userInput, wordList) {
   if(wordList.includes(userInput)) {
     alert("That's a word");
+    $('#' + userInput).removeClass("crypto");
   } else {
   alert("That's not a word");
   }
@@ -131,26 +132,45 @@ function deDup(wordList) {
   return wordList;
 }
 
-$(document).ready(function() {
-  $("#play").on('click', function() {
-    $("#mainPage").fadeIn(300);
-    $("#homePage").hide();
-    
-  });
+function getRandomLetters() {
 
   var random = randomize(5);
   var combos = combinations(random);
   var found = possibleWords(combos);
-  if (found.length >= 5) {
-    found.forEach(function (word) {
-      $("#words").append("<li>" + word + "</li>");
+  return found;
+}
+
+$(document).ready(function() {
+  $("#play").on('click', function() {
+  $("#mainPage").fadeIn(300);
+  $("#homePage").hide();
+
+    });
+  // var random = randomize(5);
+  // var combos = combinations(random);
+  // var found = possibleWords(combos);
+  var found = getRandomLetters();
+   while(found.length <= 5) {
+    found = getRandomLetters();
+  }
+  if(found.length >= 5) {
+    found = deDup(found);
+    found.forEach(function (word,i) {
+      $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
     });
   }
-  $("#random").text(random);
+  // $(document).keypress(function(event) {
+  //   var keycode = event.keyCode || event.which;
+  //   if(keycode == '13') {
+  //     alert('You pressed a "enter" key in somewhere');
+  //     // $("form#userText").submit();
+  //   }
+  // });
+
   $("form#userText").submit(function(event){
     alert("Submission");
     event.preventDefault();
-    var userInput = $("#formInput").val();
+    var userInput = $("#formInput").val().toLowerCase();
     alert(userInput);
     isWord(userInput, found);
     $("#formInput").val('');
