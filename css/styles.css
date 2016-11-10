@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-#letterOne {
+.letterOne {
   height: 30px;
   width: 30px;
   display: inline;

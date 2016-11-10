@@ -1,7 +1,3 @@
-
-
-
-
 function randomize(length) {
   var randomLetters = "";
   var letters = "abcdefghijklmnopqrstuvwxyz";
@@ -14,6 +10,27 @@ function randomize(length) {
     console.log(randomLetters);
     return randomLetters;
 };
+
+function showRandomLetters(letters) {
+  var ranLettersArr = letters.split("");
+  return ranLettersArr;
+
+}
+
+function shuffle(array) {
+  var i = 0
+    , j = 0
+    , temp = null
+
+  for (i = array.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+  return array;
+  console.log(array);
+}
 
 function combinations(str) {
    var fn = function(active, rest, a) {
@@ -48,15 +65,9 @@ function permute(input) {
         permArr.forEach(function (p) {
           result.push(p.join(''));
         });
-
         return result;
-
     })();
-
-
 }
-
-
 
 function possibleWords(combos) {
   var found = [];
@@ -96,21 +107,50 @@ function deDup(wordList) {
 }
 
 $(document).ready(function() {
+
+
+
   var random = randomize(5);
   var combos = combinations(random);
   var found = possibleWords(combos);
+  var ranDisplay = showRandomLetters(random);
+
+
+  console.log(ranDisplay);
+
   if (found.length >= 5) {
     found.forEach(function (word) {
       $("#words").append("<li>" + word + "</li>");
     });
   }
-  $("#random").text(random);
-  $("form#userText").submit(function(event){
-    alert("Submission");
-    event.preventDefault();
-    var userInput = $("#formInput").val();
-    alert(userInput);
-    isWord(userInput, found);
-    $("#formInput").val('');
+
+  ranDisplay.forEach(function (letter) {
+    $("#random").append("<div class='letterOne well'>" + letter + "</div>");
   });
+
+var shuffleRan = shuffle(ranDisplay);
+shuffleRan.forEach(function (letter) {
+$("#random").fadeIn("<div class='letterOne well'>" + letter + "</div>");
+});
+};
+
+console.log(replaceSHIT);
+
+  $("#shuffle").on('click', function() {
+    $("#random li").text("");
+    $("#letterOne well").append(replaceSHIT);
+
+  });
+
+
+
+
+  // $("form#userText").submit(function(event){
+  //   alert("Submission");
+  //   event.preventDefault();
+  //   var userInput = $("#formInput").val();
+  //   alert(userInput);
+  //   isWord(userInput, found);
+  //   $("#formInput").val('');
+  // });
 });
