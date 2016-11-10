@@ -161,6 +161,7 @@ ul {
 
 #endGame {
   font-size: 250%;
+  display: none;
 }
 
 #endGame button {
