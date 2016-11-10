@@ -40,11 +40,11 @@ function startTimer(duration, display) {
     setInterval(timer, 1000);
 }
 
-window.onload = function () {
-    var fiveMinutes = 60 * 1,
-        display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
-};
+// window.onload = function () {
+//     var fiveMinutes = 60 * 1,
+//         display = document.querySelector('#time');
+//     startTimer(fiveMinutes, display);
+// };
 
 
 
@@ -168,29 +168,33 @@ $(document).ready(function() {
   $("#play").on('click', function() {
     $("#mainPage").fadeIn(300);
     $("#homePage").hide();
+    var fiveMinutes = 60 * 1,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
   });
   var random = randomize(5);
   var found = getRandomLetters(random);
-  var ranDisplay = showRandomLetters(random);
+
 
 
    while(found.length <= 5) {
     var random = randomize(5);
     found = getRandomLetters(random);
+    var ranDisplay = showRandomLetters(random);
   }
   if(found.length > 5) {
     found = deDup(found);
     found.forEach(function (word,i) {
       $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
     });
+    ranDisplay.forEach(function (letter) {
+      $(".letterGroup").append("<div class='letter well'>" + letter + "</div>");
+    });
   }
 
   possibleScore = getPossibleScore(found);
   console.log("possible score: " + possibleScore);
 
-  ranDisplay.forEach(function (letter) {
-    $(".letterGroup").append("<div class='letter well'>" + letter + "</div>");
-  });
 
   $("form#userText").submit(function(event){
     event.preventDefault();
