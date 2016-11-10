@@ -51,6 +51,12 @@ function randomize(length) {
     return randomLetters;
 };
 
+function showRandomLetters(letters) {
+  var ranLettersArr = letters.split("");
+  return ranLettersArr;
+
+}
+
 function combinations(str) {
    var fn = function(active, rest, a) {
        if (!active && !rest)
@@ -132,9 +138,8 @@ function deDup(wordList) {
   return wordList;
 }
 
-function getRandomLetters() {
+function getRandomLetters(random) {
 
-  var random = randomize(5);
   var combos = combinations(random);
   var found = possibleWords(combos);
   return found;
@@ -142,16 +147,16 @@ function getRandomLetters() {
 
 $(document).ready(function() {
   $("#play").on('click', function() {
-  $("#mainPage").fadeIn(300);
-  $("#homePage").hide();
+    $("#mainPage").fadeIn(300);
+    $("#homePage").hide();
+  });
+  var random = randomize(5);
+  var found = getRandomLetters(random);
+  var ranDisplay = showRandomLetters(random);
 
-    });
-  // var random = randomize(5);
-  // var combos = combinations(random);
-  // var found = possibleWords(combos);
-  var found = getRandomLetters();
    while(found.length <= 5) {
-    found = getRandomLetters();
+    var random = randomize(5);
+    found = getRandomLetters(random);
   }
   if(found.length >= 5) {
     found = deDup(found);
@@ -159,6 +164,9 @@ $(document).ready(function() {
       $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
     });
   }
+  ranDisplay.forEach(function (letter) {
+  $(".letterGroup").append("<div class='letter well'>" + letter + "</div>");
+});
   // $(document).keypress(function(event) {
   //   var keycode = event.keyCode || event.which;
   //   if(keycode == '13') {
