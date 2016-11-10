@@ -180,9 +180,9 @@ $(document).ready(function() {
    while(found.length <= 5) {
     var random = randomize(5);
     found = getRandomLetters(random);
-    var ranDisplay = showRandomLetters(random);
   }
   if(found.length > 5) {
+    var ranDisplay = showRandomLetters(random);
     found = deDup(found);
     found.forEach(function (word,i) {
       $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
