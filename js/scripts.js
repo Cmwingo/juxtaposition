@@ -124,10 +124,10 @@ function possibleWords(combos) {
 
 function isWord(userInput, wordList) {
   if(wordList.includes(userInput)) {
-    alert("That's a word");
-    $('#' + userInput).removeClass("crypto");
-  } else {
-  alert("That's not a word");
+    return true;
+  }
+  else {
+    return false;
   }
 }
 
@@ -158,6 +158,7 @@ $(document).ready(function() {
   var random = randomize(5);
   var found = getRandomLetters(random);
   var ranDisplay = showRandomLetters(random);
+  var score = 0;
 
    while(found.length <= 5) {
     var random = randomize(5);
@@ -169,23 +170,20 @@ $(document).ready(function() {
       $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
     });
   }
+
   ranDisplay.forEach(function (letter) {
-  $(".letterGroup").append("<div class='letter well'>" + letter + "</div>");
-});
-  // $(document).keypress(function(event) {
-  //   var keycode = event.keyCode || event.which;
-  //   if(keycode == '13') {
-  //     alert('You pressed a "enter" key in somewhere');
-  //     // $("form#userText").submit();
-  //   }
-  // });
+    $(".letterGroup").append("<div class='letter well'>" + letter + "</div>");
+  });
 
   $("form#userText").submit(function(event){
-    alert("Submission");
     event.preventDefault();
     var userInput = $("#formInput").val().toLowerCase();
-    alert(userInput);
-    isWord(userInput, found);
+    if(isWord(userInput, found))
+    {
+      $('#' + userInput).removeClass("crypto");
+      score += userInput.length * 5;
+      console.log(score);
+    }
     $("#formInput").val('');
   });
 });
