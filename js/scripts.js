@@ -132,6 +132,12 @@ function deDup(wordList) {
 }
 
 $(document).ready(function() {
+  $("#play").on('click', function() {
+    $("#mainPage").fadeIn(300);
+    $("#homePage").hide();
+    
+  });
+
   var random = randomize(5);
   var combos = combinations(random);
   var found = possibleWords(combos);

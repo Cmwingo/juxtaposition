@@ -12,61 +12,77 @@
     <title></title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
-        <div class="content">
-          <h2 id="test" class="animated tada">Juxstaposition</h2>
-          <h1 id="test2" class="animated flip">Round 1</h1>
-        </div>
+    <div id="homePage" class="panel">
+      <h5>Welcome to Juxtaposition!</h5>
+      <p>Rules:</p>
+      <ol><li>5 letters will appear on the page...</li>
+          <li>Try to come up with as many English words as possible before the timer runs out!</li>
+          <li>Type the words in the form, correct inputs will be displayed in the sidebar on the right side of the page.</li>
+          <li>You have 60 seconds to complete each challenge.</li>
+          <li>Click on the shuffle button to shuffle the letters around if you get stuck!</li></ol>
+          <br>
+      <p>Hit the button below when you are ready to begin. The timer will start right after hitting it.</p>
+      <div class="startButton">
+        <button type="submit" class="btn-success" id="play">Let's Play!</button>
       </div>
-      <div class="panel">
-        <div class="row">
-        <!--Wells for Game Letters-->
-          <div class="col-md-8">
-            <div class="letterGroup">
-              <br>
-              <div id="letter1" class="well letter">
-              </div>
-              <div id="letter2" class="well letter">
-              </div>
-              <div id="letter3" class="well letter">
-              </div>
-              <div id="letter4" class="well letter">
-              </div>
-              <div id="letter5" class="well letter">
-              </div>
-            </div>
-            <!--*SUBMIT BUTTON*-->
-            <div class="shuffleButton">
-              <button type="submit" class="btn-success">Shuffle</button>
-            </div>
-            <br><br>
-            <!-- Form for the user to write their potential words -->
-            <form id="userText">
-              <div id="userForm">
-                <input id="formInput" class="form-control" type="text">
-              </div>
-            </form>
-            <br><br><br>
-            <!-- timer countdown -->
-            <div class="row">
-              <div id="time">
-                <h3>Countdown Clock</h3>
-                <div>
-                  <span class="minutes"></span>
-                  <div class="smalltext">Minutes</div>
-                </div>
-                <div>
-                  <span class="seconds"></span>
-                  <div class="smalltext">Seconds</div>
-                </div>
-              </div>
-            </div>
+    </div>
+    <div id="mainPage">
+      <div class="container">
+        <div class="jumbotron">
+          <div class="content">
+            <h2 id="test" class="animated tada">Juxstaposition</h2>
+            <h1 id="test2" class="animated flip">Round 1</h1>
           </div>
-          <!--Sidebar-->
-          <div class="col-md-4">
-            <div id="sibebarResults" class="well well-lg">
-              <ul id="words">Words appear here!</ul>
+        </div>
+        <div class="panel">
+          <div class="row">
+          <!--Wells for Game Letters-->
+            <div class="col-md-8">
+              <div class="letterGroup">
+                <br>
+                <div id="letter1" class="well letter">
+                </div>
+                <div id="letter2" class="well letter">
+                </div>
+                <div id="letter3" class="well letter">
+                </div>
+                <div id="letter4" class="well letter">
+                </div>
+                <div id="letter5" class="well letter">
+                </div>
+              </div>
+              <!--*SUBMIT BUTTON*-->
+              <div class="shuffleButton">
+                <button type="submit" class="btn-success">Shuffle</button>
+              </div>
+              <br><br>
+              <!-- Form for the user to write their potential words -->
+              <form id="userText">
+                <div id="userForm">
+                  <input id="formInput" class="form-control" type="text">
+                </div>
+              </form>
+              <br><br><br>
+              <!-- timer countdown -->
+              <div class="row">
+                <div id="time">
+                  <h3>Countdown Clock</h3>
+                  <div>
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                  </div>
+                  <div>
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Sidebar-->
+            <div class="col-md-4">
+              <div id="sibebarResults" class="well well-lg">
+                <ul id="words">Words appear here!</ul>
+              </div>
             </div>
           </div>
         </div>
