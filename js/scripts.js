@@ -1,7 +1,13 @@
+var score = 0;
+var possibleScore = 0;
+
 function endGame() {
   $("#mainPage").hide();
   $("#endGame").fadeIn(300);
+  $("#score").text(score);
+  $("#possible-score").text(possibleScore);
 }
+
 function startTimer(duration, display) {
     var start = Date.now(),
         diff,
@@ -150,6 +156,14 @@ function getRandomLetters(random) {
   return found;
 }
 
+function getPossibleScore(wordList) {
+  var total = 0;
+  for(i = 0; i < wordList.length; i++) {
+    total += wordList[i].length * 5;
+  }
+  return total;
+}
+
 $(document).ready(function() {
   $("#play").on('click', function() {
     $("#mainPage").fadeIn(300);
@@ -158,18 +172,21 @@ $(document).ready(function() {
   var random = randomize(5);
   var found = getRandomLetters(random);
   var ranDisplay = showRandomLetters(random);
-  var score = 0;
+
 
    while(found.length <= 5) {
     var random = randomize(5);
     found = getRandomLetters(random);
   }
-  if(found.length >= 5) {
+  if(found.length > 5) {
     found = deDup(found);
     found.forEach(function (word,i) {
       $("#words").append("<li class='crypto' id='" + word + "'>" + word + "</li>");
     });
   }
+
+  possibleScore = getPossibleScore(found);
+  console.log("possible score: " + possibleScore);
 
   ranDisplay.forEach(function (letter) {
     $(".letterGroup").append("<div class='letter well'>" + letter + "</div>");
