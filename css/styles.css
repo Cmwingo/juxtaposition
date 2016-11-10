@@ -117,4 +117,13 @@ h1 {
 
 .crypto {
 font-family: Webdings, sans-serif;
+color: black;
+}
+
+li{
+  color: white;
+}
+
+ul {
+  list-style: none;
 }
